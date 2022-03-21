@@ -2,6 +2,11 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   height: 100vh;
-  width: 100vw;
-  background-color: ${({ theme }) => theme.COLORS.DARK};
+  background-color: ${({ theme }) => theme.COLORS.PRIMARY};
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 `;
+
+export const Form = styled.form``;
