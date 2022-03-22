@@ -6,12 +6,12 @@
     "password": "pethood",
     "database": "bolttech",
     "entities": [
-        "./src/modules/**/infra/typeorm/entities/*.ts"
+        "./src/modules/**/entities/*.ts"
     ],
     "migrations": [
-        "./src/shared/infra/typeorm/migrations/*.ts"
+        "./src/shared/database/migrations/*.ts"
     ],
     "cli": {
-        "migrationsDir": "./src/shared/infra/typeorm/migrations"
+        "migrationsDir": "./src/shared/database/migrations"
     }
 }]

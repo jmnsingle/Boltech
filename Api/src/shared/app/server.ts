@@ -1,11 +1,13 @@
+import 'reflect-metadata';
 import express, { Request, Response } from 'express';
 import path from 'path';
 import 'express-async-errors';
 
-import AppError from '../../errors/AppError';
+import AppError from '../errors/AppError';
 import routes from './routes';
 
-import '../typeorm';
+import '../database';
+import '../container/dependecyInjector';
 
 const app = express();
 
