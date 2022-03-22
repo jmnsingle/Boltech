@@ -12,7 +12,7 @@ class ProjectController {
 
     const project = await service.execute({
       title,
-      user_id: 'f4cf4e59-a49a-484b-8459-58e5c028755c',
+      user_id: request.user.id,
     });
 
     return response.json(project);
@@ -21,9 +21,7 @@ class ProjectController {
   public async index(request: Request, response: Response): Promise<Response> {
     const service = container.resolve(ListProjectService);
 
-    const project = await service.execute(
-      'f4cf4e59-a49a-484b-8459-58e5c028755c',
-    );
+    const project = await service.execute(request.user.id);
 
     return response.json(project);
   }
