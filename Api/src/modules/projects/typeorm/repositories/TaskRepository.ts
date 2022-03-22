@@ -23,8 +23,8 @@ class TaskRepository implements ITaskRepository {
     return this.repository.save(data);
   }
 
-  public async findAll(): Promise<Task[]> {
-    return this.repository.find();
+  public async findAll(project_id: string): Promise<Task[]> {
+    return this.repository.find({ where: { project_id } });
   }
 
   public async delete(id: string): Promise<void> {

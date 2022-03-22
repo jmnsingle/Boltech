@@ -2,9 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  ManyToOne,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import Project from './Project';
 
 @Entity('tasks')
 class Task {
@@ -16,6 +19,10 @@ class Task {
 
   @Column()
   description: string;
+
+  @ManyToOne(() => Project, { eager: true })
+  @JoinColumn({ name: 'project_id' })
+  project: Project;
 
   @CreateDateColumn()
   created_at: Date;

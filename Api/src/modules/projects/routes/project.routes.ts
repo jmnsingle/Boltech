@@ -8,7 +8,9 @@ const projectController = new ProjectController();
 const taskController = new TaskController();
 
 projectRouter.post('/', projectController.create);
+projectRouter.get('/', projectController.index);
 
 projectRouter.post('/tasks/:project_id', taskController.create);
+projectRouter.get('/tasks/:project_id', taskController.index);
 
 export default projectRouter;

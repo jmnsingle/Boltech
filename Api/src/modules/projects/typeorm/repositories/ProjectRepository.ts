@@ -23,8 +23,8 @@ class ProjectRepository implements IProjectRepository {
     return this.repository.save(data);
   }
 
-  public async findAll(): Promise<Project[]> {
-    return this.repository.find();
+  public async findAll(user_id: string): Promise<Project[]> {
+    return this.repository.find({ where: { user_id } });
   }
 
   public async delete(id: string): Promise<void> {
