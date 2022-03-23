@@ -16,8 +16,6 @@ class CreateProjectService {
   ) {}
 
   public async execute({ title, user_id }: IRequestDTO): Promise<Project> {
-    console.log('title, user_id', title, user_id);
-
     return this.repository.create({
       title,
       user_id,

@@ -13,7 +13,7 @@ import User from '../../../users/typeorm/entities/User';
 @Entity('projects')
 class Project {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @Column('uuid')
   user_id: string;

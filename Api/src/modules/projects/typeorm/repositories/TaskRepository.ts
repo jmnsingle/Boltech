@@ -27,6 +27,10 @@ class TaskRepository implements ITaskRepository {
     return this.repository.find({ where: { project_id } });
   }
 
+  public async findById(id: string): Promise<Task | undefined> {
+    return this.repository.findOne({ where: { id } });
+  }
+
   public async delete(id: string): Promise<void> {
     await this.repository.delete(id);
   }

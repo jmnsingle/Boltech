@@ -12,5 +12,6 @@ projectRouter.get('/', projectController.index);
 
 projectRouter.post('/tasks/:project_id', taskController.create);
 projectRouter.get('/tasks/:project_id', taskController.index);
+projectRouter.put('/tasks/:task_id', taskController.update);
 
 export default projectRouter;

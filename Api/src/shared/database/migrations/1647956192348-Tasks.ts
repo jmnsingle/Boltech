@@ -22,6 +22,11 @@ export class Taks1647956192348 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'is_done',
+            type: 'boolean',
+            default: false,
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',

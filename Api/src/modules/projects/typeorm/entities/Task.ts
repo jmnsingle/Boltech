@@ -12,7 +12,7 @@ import Project from './Project';
 @Entity('tasks')
 class Task {
   @PrimaryGeneratedColumn('uuid')
-  id: number;
+  id: string;
 
   @Column('uuid')
   project_id: string;
@@ -20,7 +20,10 @@ class Task {
   @Column()
   description: string;
 
-  @ManyToOne(() => Project, { eager: true })
+  @Column('boolean')
+  is_done: boolean;
+
+  @ManyToOne(() => Project)
   @JoinColumn({ name: 'project_id' })
   project: Project;
 
